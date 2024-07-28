@@ -1,3 +1,6 @@
+#This project was definitely written with ChatGPT. So much ChatGPT. 
+#Just look at those libraries! Stack Overflow could never. :) 
+
 library(ggplot2)         
 library(dplyr)           
 library(rnaturalearth)   
@@ -238,7 +241,7 @@ if ("comments" %in% colnames(data)) {
   word_freqs <- aggregate(freq ~ word, data = word_freqs, sum)
   
   # Set margins for padding and increase plotting area size
-  par(mar = c(0, 0, 0, 0), oma = c(1, 1, 1, 1))  # Set outer margins
+  par(mar = c(0, 0, 0, 0), oma = c(2, 2, 2, 2))  # Set outer margins
   
   # Generate the word cloud 
   wordcloud(words = word_freqs$word,
@@ -249,6 +252,7 @@ if ("comments" %in% colnames(data)) {
             rot.per = 0.25,      
             use.r.layout = FALSE,
             colors = brewer.pal(8, "Paired")) 
+  title(main = "UFO Sighting Comments: Most Common Terms", line = .5, outer = TRUE)
 } else {
   cat("The 'comments' column is missing from the dataset.")
 }
